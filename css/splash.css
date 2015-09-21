@@ -1,0 +1,63 @@
+#dialog {
+  display: none;
+}
+.ui-dialog-titlebar {
+  display: none;
+  visibility: hidden;
+}
+
+.ui-dialog .ui-dialog-content {
+  background-color: #FF9E19;
+  padding: 0; 
+}
+
+.dialog-content-wrapper {
+  max-width: 845px;
+  margin: 0 auto;
+}
+
+.row-1,
+.row-2 {
+  width: 100%;
+  position: relative;
+  clear: both;
+}
+
+.row-1 {
+  margin-top: 55px;
+  background-image: url('../img/splash-bg_tile.gif');
+  background-repeat: repeat-x;
+}
+.row-2 {
+  background-color: #221C35;
+  height: 2000px;
+  padding-top: 12px;
+}
+.row-1 .col-1,
+.row-2 .col-1 {
+  float: left;
+  min-width: 245px;
+}
+.col-1 .splash-image {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+.top-cta .cta-content {
+  display: inline-block;
+  height: 365px;
+  width: 197px;
+  background: url('../img/btn-splash-celebrate50th.png') no-repeat;
+}
+.top-cta .cta-content:hover {
+  background-position: 0px -365px;
+}
+.bottom-cta .cta-content {
+  display: inline-block;
+  width: 197px;
+  height: 107px;  
+  background: url('../img/btn-splash-nea-arts-gov.png') no-repeat;
+}
+.bottom-cta .cta-content:hover {
+  background-position: 0px -119px;
+}
