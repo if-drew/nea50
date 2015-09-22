@@ -48,7 +48,7 @@ var nea50 = {
     // @h Host
     ec:function(n, h) {
       // Wipe the cookie
-      vx.cookie.cc(n, "", -1, h);
+      nea50.cookie.cc(n, "", -1, h);
     }
   },
   modal:{
