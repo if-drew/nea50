@@ -125,4 +125,4 @@ var nea50 = {
     // We're doing some on-the-fly calculations when resizing the browser width, so lets initialize that
     nea50.modal.resize($win);
   });
-})(jQuery) // Passing in jQuery (namespaces to $) to ensure that $. won't throw errors. http://stackoverflow.com/a/24930981
+})(jQuery) // Passing in jQuery (namespaced to $) to ensure that $. won't throw errors. http://stackoverflow.com/a/24930981
