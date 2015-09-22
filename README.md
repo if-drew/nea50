@@ -2,6 +2,28 @@
 
 This is a simple site that implements a cookie based display of a full-screen jQuery Modal Dialog. When any non-cookied user visits any page where the following code is triggered a modal will appear.
 
+```
+(function($) {
+  nea50.ui.init($);
+  $(document).ready(function() {
+    $( "#dialog" ).dialog({
+      dialogClass: '50th-splash',
+      autoOpen: false,
+      width: 'auto',
+      height: $(window).height(),
+      modal: true,
+      position: {
+        my: 'left top',
+        at: 'left top',
+        of: window
+      },
+      draggable: false
+    });
+    nea50.modal.resize();
+  });
+})(jQuery)
+```
+
 Place the following HTML within the site footer:
 
 ```
