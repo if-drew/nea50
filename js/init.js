@@ -66,18 +66,27 @@ var nea50 = {
   },
   ui: {
     init: function($) {
-      // First, let's see if the user has been cookied
-      var neaCookie = nea50.cookie.rc('nea50');
-      // If the cookie exists, set the value as val, else create a random number between 1-100
-      var val = parseFloat(neaCookie) || nea50.util.rndRng(0,100,2);
-      if (!neaCookie) {
-        // User hasn't been cookied, so set the cookie and trigger the dialog
-        nea50.cookie.cc('nea50',val);
-        $( "#dialog" ).dialog();
+      // Don't do anything for mobile devices
+      if (!nea50.util.isMobile()) {
+        // First, let's see if the user has been cookied
+        var neaCookie = nea50.cookie.rc('nea50');
+        // If the cookie exists, set the value as val, else create a random number between 1-100
+        var val = parseFloat(neaCookie) || nea50.util.rndRng(0,100,2);
+        if (!neaCookie) {
+          // User hasn't been cookied, so set the cookie and trigger the dialog
+          nea50.cookie.cc('nea50',val);
+          $( "#dialog" ).dialog();
+        }
       }
     }
   },
   util: {
+    isMobile: function() {
+      // Test if known patterns are in the browser userAgent
+      nea50.ua = /Android|webOS|iPhone|iPod|BlackBerry|RIM|Samsung|Touch|IEMobile|Opera Mini|Windows Phone/i.test(navigator.userAgent);
+      // Do a second check based on browser window width to narrow to non-tablet sized devices
+      return (window.outerWidth < 736) && nea50.ua;
+    },
     domain:function(hostname) {
       var parts = hostname.split('.').reverse();
 
